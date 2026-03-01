@@ -5,7 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .animated-text {
+      font-size: 40px;
+      font-weight: bold;
+      animation: colorShift 2s infinite;
+    }
+
+    @keyframes colorShift {
+        0%   { color: rgb(255, 0, 0); }       /* Red */
+        16%  { color: rgb(255, 127, 0); }     /* Orange */
+        33%  { color: rgb(255, 255, 0); }     /* Yellow */
+        50%  { color: rgb(0, 255, 0); }       /* Green */
+        66%  { color: rgb(0, 0, 255); }       /* Blue */    
+        73%  { color: rgb(75, 0, 130); }      /* Indigo */
+        83%  { color: rgb(150, 3, 255); }      /* Indigo */
+        100% { color: rgb(255, 0, 0); }       /* Back to Red */
+    }
+  </style>
+
 <body>
-    <h1  style="text-align: center;">HAPPY BIRTHDAY MY BEBESAURRRR!!!</h1>
+    <h1  class="animated-text" style="text-align: center;">HAPPY BIRTHDAY MY BEBESAURRRR!!!</h1>
+
+    <video id="bg-video" autoplay muted loop>
+    <source src="catdance.mp4" type="video/mp4">
+
+    </video>
 </body>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: sans-serif;
+    
+  }
+
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    top: -10px;
+    pointer-events: none;
+    opacity: 0.8;
+    z-index: 9999;
+    border-radius: 20%;
+  }
+
+</style>
+
+
+<script>
+const colors = ['#ff595e','#ffca3a','#8ac926','#1982c4','#6a4c93','#f72585','#3a0ca3','#4361ee'];
+
+function createConfetti() {
+  const confetti = document.createElement('div');
+  confetti.classList.add('confetti');
+  confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  confetti.style.left = Math.random() * window.innerWidth + 'px';
+  confetti.style.width = confetti.style.height = (5 + Math.random()*10) + 'px';
+  
+  document.body.appendChild(confetti);
+
+  const fallDuration = 2000 + Math.random()*3000;
+  confetti.animate([
+    { transform: `translateY(0px) rotate(0deg)` },
+    { transform: `translateY(${window.innerHeight + 20}px) rotate(${Math.random()*360}deg)` }
+  ], {
+    duration: fallDuration,
+    easing: 'linear',
+  }).onfinish = () => confetti.remove();
+}
+
+// create confetti continuously
+setInterval(createConfetti, 100);
+</script>
 </html>
