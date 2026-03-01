@@ -39,7 +39,7 @@ video {
     height: 100%;
     width: 0%;
     background-color: #4CAF50;
-    animation: load 3s linear infinite;
+    animation: load 5s linear forwards;
 }
 
 /* Animation */
@@ -47,3 +47,4 @@ video {
     0% { width: 0%; }
     100% { width: 100%; }
 }
+
