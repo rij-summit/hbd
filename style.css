@@ -13,13 +13,13 @@ body{
     width: 80%;
     max-width: 500px;
     height: 20px;
-    justify-content: center;
 
 }
 
 video{
     display: block;
     align-content: center;
+
 }
 
 .progress-container {
@@ -52,6 +52,4 @@ video{
 @keyframes load {
     0% { width: 0%; }
     100% { width: 100%; }
-
 }
-
