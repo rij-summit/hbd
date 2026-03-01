@@ -12,7 +12,7 @@
 
 <div class="wrapper">
 
-    <video autoplay muted loop playsinline>
+    <video id = "myVideo" autoplay muted loop playsinline>
         <source src="keroppi.mp4" type="video/mp4">
     </video>
 
@@ -21,6 +21,16 @@
     </div>
 
 </div>
+
+<script>
+const video = document.getElementById("myVideo");
+
+// When video is clicked
+video.addEventListener("click", function() {
+    video.currentTime = 4;   // Jump to 5 seconds
+    video.play();            // Make sure it continues playing
+});
+</script>
 
 </body>
 </html>
