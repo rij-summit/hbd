@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(160, 229, 252);
+}
+
+.video-container{
+    position: fixed;
+
+    top: 5%;
+    left: 54%;
+
+    transform: translate(-50%);
+
+    width: 80%;
+    max-width: 500px;
+    height: 20px;
+    justify-content: center;
+
+}
+
+video{
+    display: block;
+    align-content: center;
+}
+
+.progress-container {
+    position: fixed;
+
+    top: 70%;
+    left: 50%;
+
+    transform: translate(-50%);
+
+    width: 50%;
+    max-width: 500px;
+    height: 20px;
+
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4CAF50;
+    animation: load 4s linear forwards;
+}
+
+@keyframes load {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
