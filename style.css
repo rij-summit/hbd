@@ -30,7 +30,7 @@ video{
 
     transform: translate(-50%);
 
-    width: 80%;
+    width: 100%;
     max-width: 500px;
     height: 20px;
 
@@ -54,3 +54,4 @@ video{
     100% { width: 100%; }
 
 }
+
