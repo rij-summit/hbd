@@ -27,10 +27,13 @@
 <body>
     <h1  class="animated-text" style="text-align: center;">HAPPY BIRTHDAY MY BEBESAURRRR!!!</h1>
 
-    <video id="bg-video" autoplay muted loop>
-    <source src="catdance.mp4" type="video/mp4">
+    <div class="video-container">
+      <video height="auto" width="300px" id="bg-video" autoplay muted loop>
+        <source src="catdance.mp4" type="video/mp4">
+      </video>
 
-    </video>
+    </div>
+    <h1  class="animated-text" style="text-align: center;">I LOVE YOUUUUU</h1>
 </body>
 
 <style>
@@ -38,7 +41,7 @@
     margin: 0;
     height: 100vh;
     overflow: hidden;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     background: #f2f2f2;
@@ -47,6 +50,17 @@
     font-weight: bold;
     font-family: sans-serif;
     
+  }
+h1{
+  padding: 50px;
+}
+  .video-container{
+    height: 90px;
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
   }
 
   .confetti {
